@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vLo-SU-RBE">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Game View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="GameViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8aa-yV-Osq"/>
+                        <viewControllerLayoutGuide type="bottom" id="qHh-Mt-9TT"/>
+                    </layoutGuides>
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2674" y="-274"/>
+        </scene>
+        <!--High Score View Controller-->
+        <scene sceneID="o4K-7a-dr6">
+            <objects>
+                <viewController storyboardIdentifier="HighScoreViewController" id="ugA-to-Rc0" customClass="HighScoreViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BRs-yx-g23"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cfm-Aa-klu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LNA-28-5HH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jcA-lC-wvv">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="VbK-UJ-Va8"/>
+                                </constraints>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kzk-Wh-yvb">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="fGG-Y3-I8I"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="High Scores" id="nHE-jR-eM4">
+                                        <barButtonItem key="leftBarButtonItem" image="ic_back" id="HRT-Xj-wRU">
+                                            <connections>
+                                                <action selector="back:" destination="ugA-to-Rc0" id="zqO-vB-RIG"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dnl-CO-8dM">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HighScoreTableViewCell" rowHeight="50" id="RDB-do-eRi" customClass="HighScoreTableViewCell">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RDB-do-eRi" id="0da-6s-Nep">
+                                            <frame key="frameInset" width="375" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGV-hX-pGO">
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="money" translatesAutoresizingMaskIntoConstraints="NO" id="Fyz-Er-mA2">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="35" id="9jm-bZ-Uxd"/>
+                                                        <constraint firstAttribute="width" constant="35" id="pqL-vW-tC3"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="pGV-hX-pGO" secondAttribute="trailing" constant="15" id="4Wg-3q-PjI"/>
+                                                <constraint firstItem="pGV-hX-pGO" firstAttribute="centerY" secondItem="0da-6s-Nep" secondAttribute="centerY" id="Iak-KV-xTe"/>
+                                                <constraint firstItem="pGV-hX-pGO" firstAttribute="leading" secondItem="Fyz-Er-mA2" secondAttribute="trailing" constant="15" id="OoC-8w-kQi"/>
+                                                <constraint firstItem="Fyz-Er-mA2" firstAttribute="centerY" secondItem="0da-6s-Nep" secondAttribute="centerY" id="UNz-jH-s8M"/>
+                                                <constraint firstItem="pGV-hX-pGO" firstAttribute="width" secondItem="0da-6s-Nep" secondAttribute="width" multiplier="0.5" id="V6R-Ry-6CS"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="score" destination="pGV-hX-pGO" id="dBp-HK-ldP"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ugA-to-Rc0" id="G5J-pM-5uR"/>
+                                    <outlet property="delegate" destination="ugA-to-Rc0" id="XHN-XW-xUW"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Kzk-Wh-yvb" firstAttribute="leading" secondItem="LNA-28-5HH" secondAttribute="leading" id="0av-M0-cXZ"/>
+                            <constraint firstAttribute="trailing" secondItem="dnl-CO-8dM" secondAttribute="trailing" id="3O4-vf-ol2"/>
+                            <constraint firstItem="jcA-lC-wvv" firstAttribute="top" secondItem="Kzk-Wh-yvb" secondAttribute="bottom" id="Aw8-OF-ctm"/>
+                            <constraint firstItem="jcA-lC-wvv" firstAttribute="leading" secondItem="LNA-28-5HH" secondAttribute="leading" id="FY5-7Z-zz2"/>
+                            <constraint firstAttribute="trailing" secondItem="jcA-lC-wvv" secondAttribute="trailing" id="TUv-Sg-4u4"/>
+                            <constraint firstAttribute="trailing" secondItem="Kzk-Wh-yvb" secondAttribute="trailing" id="XRb-5G-WXj"/>
+                            <constraint firstItem="dnl-CO-8dM" firstAttribute="top" secondItem="jcA-lC-wvv" secondAttribute="bottom" id="XVT-PW-3O2"/>
+                            <constraint firstItem="Kzk-Wh-yvb" firstAttribute="top" secondItem="LNA-28-5HH" secondAttribute="top" id="dwG-EA-5x5"/>
+                            <constraint firstItem="Cfm-Aa-klu" firstAttribute="top" secondItem="dnl-CO-8dM" secondAttribute="bottom" id="oGX-75-MzP"/>
+                            <constraint firstItem="dnl-CO-8dM" firstAttribute="leading" secondItem="LNA-28-5HH" secondAttribute="leading" id="sr5-XI-Wc1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="logoImage" destination="jcA-lC-wvv" id="GRy-3A-hj4"/>
+                        <outlet property="tableViewObj" destination="dnl-CO-8dM" id="Rcd-6C-IgE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gbu-2E-lSA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2672.8000000000002" y="480.80959520239884"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="Fe6-N0-Hvc">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="SHc-AV-9jm" customClass="HomeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yQG-f3-qjH"/>
+                        <viewControllerLayoutGuide type="bottom" id="JTR-h7-qv3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2O8-aA-QT5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rn7-pZ-qRe">
+                                <state key="normal" title="Start Game"/>
+                                <connections>
+                                    <segue destination="BV1-FR-VrT" kind="show" id="zxL-49-0Rh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eKz-mn-nvs">
+                                <state key="normal" title="HighScores"/>
+                                <connections>
+                                    <segue destination="ugA-to-Rc0" kind="show" id="Dfu-OG-9qi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Rn7-pZ-qRe" secondAttribute="trailing" constant="15" id="5an-QL-Awe"/>
+                            <constraint firstItem="Rn7-pZ-qRe" firstAttribute="leading" secondItem="2O8-aA-QT5" secondAttribute="leading" constant="15" id="6yK-0v-APF"/>
+                            <constraint firstItem="eKz-mn-nvs" firstAttribute="trailing" secondItem="Rn7-pZ-qRe" secondAttribute="trailing" id="7vL-Ai-Qto"/>
+                            <constraint firstItem="eKz-mn-nvs" firstAttribute="leading" secondItem="Rn7-pZ-qRe" secondAttribute="leading" id="DCv-gN-Fon"/>
+                            <constraint firstItem="Rn7-pZ-qRe" firstAttribute="centerY" secondItem="2O8-aA-QT5" secondAttribute="centerY" id="PiX-uL-AzP"/>
+                            <constraint firstItem="eKz-mn-nvs" firstAttribute="top" secondItem="Rn7-pZ-qRe" secondAttribute="bottom" constant="20" id="SB2-9v-r6l"/>
+                            <constraint firstItem="eKz-mn-nvs" firstAttribute="height" secondItem="Rn7-pZ-qRe" secondAttribute="height" id="tFh-xI-oXu"/>
+                            <constraint firstItem="eKz-mn-nvs" firstAttribute="centerX" secondItem="Rn7-pZ-qRe" secondAttribute="centerX" id="xFV-rC-6uT"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="xFV-rC-6uT"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="PtP-Df-vSF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7ge-cJ-fZQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1932" y="123.68815592203899"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ENJ-B6-LwX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="vLo-SU-RBE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="17p-0v-Qqn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SHc-AV-9jm" kind="relationship" relationship="rootViewController" id="C54-nR-Tgz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wvr-i9-j2h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="992.79999999999995" y="123.68815592203899"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_back" width="40" height="40"/>
+        <image name="money" width="128" height="128"/>
+    </resources>
+</document>
